@@ -14,6 +14,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.lifecycle.ViewModel;
+
 public class MainActivity extends Activity implements OnClickListener {
 
     final String LOG_TAG = "myLogs";
@@ -49,7 +51,11 @@ public class MainActivity extends Activity implements OnClickListener {
 
         // создаем объект для создания и управления версиями БД
         dbHelper = new DBHelper(this);
+
     }
+
+
+
 
     public void onClick(View v) {
 
@@ -135,6 +141,8 @@ public class MainActivity extends Activity implements OnClickListener {
         // закрываем подключение к БД
         dbHelper.close();
     }
+
+
 
     class DBHelper extends SQLiteOpenHelper {
 
